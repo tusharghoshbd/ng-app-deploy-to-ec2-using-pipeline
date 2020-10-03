@@ -5,15 +5,7 @@ phases:
     commands:
       - echo installing nodejs...
       - curl -sL https://deb.nodesource.com/setup_12.x | bash -
-      - apt-get install -y nodejs
-      # - yum install -y gcc-c++ make
-      # - sudo curl -sL https://rpm.nodesource.com/setup_12.x | sudo -E bash -
-      # - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-      # - . ~/.nvm/nvm.sh
-      # - nvm install node
-      # - curl --silent --location https://rpm.nodesource.com/setup_12.x | sudo bash -
-      # - sudo yum -y install nodejs
-      # - yum install -y nodejs  
+      - apt-get install -y nodejs  #aws code build use ubuntu environement
   pre_build:
     commands:
       - echo installing dependencies...
@@ -26,6 +18,7 @@ phases:
       - ng build --prod
 artifacts:
   files:
+    - appspec.yml
     - "**/*"
   discard-paths: no
   base-directory: dist/my-dream-app
