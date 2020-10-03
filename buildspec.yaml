@@ -4,10 +4,12 @@ phases:
   install:
     commands:
       - echo installing nodejs...
-      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-      - . ~/.nvm/nvm.sh
-      - nvm install node
-      # - yum install -y nodejs  #Amazon Linux based AMI uses the yum command instead of apt-get
+      - yum install -y gcc-c++ make
+      - curl -sL https://rpm.nodesource.com/setup_12.x | sudo -E bash -
+      # - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+      # - . ~/.nvm/nvm.sh
+      # - nvm install node
+      - yum install -y nodejs  
   pre_build:
     commands:
       - echo installing dependencies...
