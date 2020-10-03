@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - echo installing nodejs...
-      - curl -sL https://deb.nodesource.com/setup_12.x | bash -
+      - curl --silent --location https://rpm.nodesource.com/setup_12.x | bash -
       - yum install -y nodejs  #Amazon Linux based AMI uses the yum command instead of apt-get
   pre_build:
     commands:
