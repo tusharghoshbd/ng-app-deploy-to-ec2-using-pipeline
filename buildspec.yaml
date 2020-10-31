@@ -20,6 +20,6 @@ artifacts:
   files:
     - "appspec.yml"
     - "scripts/*"
-    - "**/*"
+    - "dist/my-dream-app/*"
   # discard-paths: no
   # base-directory: dist/my-dream-app
