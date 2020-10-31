@@ -18,7 +18,8 @@ phases:
       - ng build --prod
 artifacts:
   files:
-    - appspec.yml
+    - ../../appspec.yml
+    - ../../scripts/*
     - "**/*"
   discard-paths: no
   base-directory: dist/my-dream-app
