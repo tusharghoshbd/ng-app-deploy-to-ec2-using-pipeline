@@ -16,10 +16,14 @@ phases:
       # - echo testing...
       # - echo building...
       - ng build --prod
-artifacts:
-  files:
-    - "appspec.yml"
-    - "scripts/*"
-    - "dist/my-dream-app/*"
+  post_build:
+    commands:
+      - mv appspec.yml ./dist/my-dream-app
+      - mv scripts/* ./dist/my-dream-app
+# artifacts:
+#   files:
+#     - "appspec.yml"
+#     - "scripts/*"
+#     - "dist/my-dream-app/*"
   discard-paths: no
   base-directory: dist/my-dream-app
